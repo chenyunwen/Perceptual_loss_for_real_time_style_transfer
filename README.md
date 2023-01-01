@@ -24,6 +24,11 @@ python main.py --train-flag True --cuda-device-no 0 --imsize 256 --cropsize 240 
 ```
 
 #### Testing
+
+We trained four models named `transform_network.pth`, respectively in the following folders:
+
+`trained_models/the-muse/`, `trained_models/wave/`, `trained_models/starry_night/`, `trained_models/Arles/`
+
 - Image style transfer example
 
 ```
