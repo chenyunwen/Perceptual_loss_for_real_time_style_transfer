@@ -24,33 +24,17 @@ python main.py --train-flag True --cuda-device-no 0 --imsize 256 --cropsize 240 
 ```
 
 - Testing
-    - Image style transfer
-```
-python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path ../path/to/modle.pth --test-content ../path/to/content_img.jpg --output ../path/to/output_img.jpg
-```
-
-For example:
+    - Image style transfer example
 ```
 python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path trained_models/Arles/transform_network.pth --test-content imgs/image_0.jpg --output RealTime_Arles_S256_E10000_image_0.jpg
 ```
 
-    - Video style transfer
-```
-python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path ../path/to/content_img.jpg --input-video ../path/to/input_video.mp4 --output-video ../path/to/output_video.mp4
-```
-
-For example:
+    - Video style transfer example
 ```
 python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path trained_models/the-muse/transform_network.pth --input-video imgs/video_0.mp4 --output-video trained_models/the-muse/video_0.mp4
 ```
 
-### Output files:
-- for image, in `src/settings.py`, and change `OUTPUT_PATH = '../path/to/result'`
-
-- for video, in `src/settings.py`, and change `OUTPUT_PATH_VIDEO = '../path/to/result'`
-
 ## Our result
-We only show the image transfer result.
 
 - input content image
 
