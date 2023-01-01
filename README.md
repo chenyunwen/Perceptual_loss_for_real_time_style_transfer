@@ -37,14 +37,14 @@ python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-p
 
 ## Our result
 
+- input styles
+
+<img src ="imgs\style\the-muse.jpg" height="128px" /> <img src ="imgs\style\Under-the-Wave-off-Kanagawa.jpg" height="128px" /> <img src ="imgs\style\starry_night.jpg" height="128px" /> <img src ="imgs\style\Arles.jpg" height="128px" />
+
 ### Image style transfer
 - input content image
 
 <img src ="imgs\image_0.jpg" height="128px"/> <img src ="imgs\image_1.jpg" height="128px"/>
-
-- input styles
-
-<img src ="imgs\style\the-muse.jpg" height="128px" /> <img src ="imgs\style\Under-the-Wave-off-Kanagawa.jpg" height="128px" /> <img src ="imgs\style\starry_night.jpg" height="128px" /> <img src ="imgs\style\Arles.jpg" height="128px" />
 
 - Result
 
@@ -52,6 +52,12 @@ python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-p
 
 <img src ="Result\RealTime_night_S256_E10000_chicken.jpg" height="128px" /> <img src ="Result\RealTime_night_S256_E10000_image_1.jpg" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_image_0.jpg" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_image_1.jpg" height="128px" /> 
 
+### Video style transfer
+- input content video
+`imgs/video_0.mp4` and `imgs/video_1.mp4`
+
+- Result
+`trained_models/style_name/style_name_video_0.mp4` and `trained_models/style_name/style_name_video_1.mp4`
 ---
 
 ## The following content comes from the original Repository.
