@@ -1,6 +1,8 @@
 import os
 from PIL import Image
+import cv2
 
+import numpy as np
 import torch
 import torchvision
 import torchvision.transforms as transforms
@@ -49,6 +51,23 @@ def imsave(tensor, path):
     torchvision.utils.save_image(denormalize(tensor).clamp_(0.0, 1.0), path)
     return None
     
+def imsaveframe(tensor, writer=None):
+    if tensor.is_cuda:
+        tensor = tensor.cpu()
+    tensor = torchvision.utils.make_grid(tensor)    
+    tensor = denormalize(tensor).clamp_(0.0, 1.0)
+    # convert tensor to PIL image
+    frame = np.asarray(transforms.ToPILImage()(tensor)) 
+    frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+    if(writer is not None): 
+        writer.write(frame)
+    return frame
+
 def imload(path, imsize=None, cropsize=None):
     transformer = get_transformer(imsize, cropsize)
     return transformer(Image.open(path).convert("RGB")).unsqueeze(0)
+
+def imloadFrame(frame):
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    transformer = get_transformer()
+    return transformer(frame).unsqueeze(0)

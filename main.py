@@ -24,7 +24,7 @@ def build_parser():
                     help='Train flag', required=True)
 
     parser.add_argument('--max-iter', type=int,
-                    help='Train iterations', default=15000)
+                    help='Train iterations', default=10000) # 15000 
 
     parser.add_argument('--batchs', type=int,
                     help='Batch size', default=8)
@@ -77,6 +77,11 @@ def build_parser():
     parser.add_argument('--output', type=str,
                     help='output image path to save the stylized image', default='stylized.jpg')
     
+    parser.add_argument('--input-video', type=str,
+                    help='input video path to stylize', default=None)
+
+    parser.add_argument('--output-video', type=str,
+                    help='output video path to save the stylized video', default=None)
     return parser
 
 if __name__ == '__main__':

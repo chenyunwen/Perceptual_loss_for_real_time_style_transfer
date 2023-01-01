@@ -68,6 +68,7 @@ def network_train(args):
     target_style_image = target_style_image.expand(args.batchs, c, h, w)
 
     # Train
+    start = time.time()
     loss_logs = {'content_loss':[], 'style_loss':[], 'tv_loss':[], 'total_loss':[]}
     for iteration in range(args.max_iter):
         train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=args.batchs, shuffle=True)
@@ -109,6 +110,9 @@ def network_train(args):
 
             torch.save(transform_network.state_dict(), args.save_path+"transform_network.pth")
 
+    stop = time.time()
+    print(f"Training time: {stop - start}s")
+    
     # save train results
     torch.save(loss_logs, args.save_path+"loss_logs.pth")
     torch.save(transform_network.state_dict(), args.save_path+"transform_network.pth")
