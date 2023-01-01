@@ -14,7 +14,7 @@ Environment we used:
 
 ### Run this code:
 
-- Training
+#### Training
 
 We use [MSCOCO train2014](http://cocodataset.org/#download) as training data and put the training images in `./coco2014`.
 
@@ -23,13 +23,14 @@ Example for training with style image `imgs/style/Arles.jpg`:
 python main.py --train-flag True --cuda-device-no 0 --imsize 256 --cropsize 240 --train-content ./coco2014/ --train-style imgs/style/Arles.jpg --save-path trained_models/Arles/
 ```
 
-- Testing
-    - Image style transfer example
+#### Testing
+- Image style transfer example
+
 ```
 python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path trained_models/Arles/transform_network.pth --test-content imgs/image_0.jpg --output RealTime_Arles_S256_E10000_image_0.jpg
 ```
+- Video style transfer example
 
-    - Video style transfer example
 ```
 python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path trained_models/the-muse/transform_network.pth --input-video imgs/video_0.mp4 --output-video trained_models/the-muse/video_0.mp4
 ```
