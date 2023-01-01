@@ -37,22 +37,27 @@ python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-p
 
 ## Our result
 
+### Image style transfer
 - input content image
 
-<img src ="input\image_1.jpg" height="128px"/>
+<img src ="imgs\image_0.jpg" height="128px"/> <img src ="imgs\image_1.jpg" height="128px"/>
 
-- input style
+- input styles
 
-<img src ="input\Arles.jpg" height="128px" />
+<img src ="imgs\style\the-muse.jpg" height="128px" /> <img src ="imgs\style\Under-the-Wave-off-Kanagawa.jpg" height="128px" /> <img src ="imgs\style\starry_night.jpg" height="128px" /> <img src ="imgs\style\Arles.jpg" height="128px" />
 
 - Result
 
-<img src ="output\Gatys_starry-night_S256_E500_image_1.png" width="170px" height="128px" />
+<img src ="Result\RealTime_the-muse_S256_E10000_chicken.png" height="128px" />
+<img src ="Result\RealTime_the-muse_S256_E10000_image_1.png" height="128px" /> <img src ="Result\RealTime_wave_S256_E10000_chicken.png" height="128px" /> <img src ="Result\RealTime_wave_S256_E10000_image_1.png" height="128px" /> 
+
+<img src ="Result\RealTime_night_S256_E10000_chicken.png" height="128px" />
+<img src ="Result\RealTime_night_S256_E10000_image_1.png" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_chicken.png" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_image_1.png" height="128px" /> 
 
 ---
 
 ## The following content comes from the original Repository.
----
+<!-- --- -->
 **Unofficial PyTorch implementation of real-time style transfer**
 
 **Reference**: [Perceptual Losses for Real-Time Style Transfer and Super-Resolution, ECCV2016](https://arxiv.org/abs/1603.08155)
