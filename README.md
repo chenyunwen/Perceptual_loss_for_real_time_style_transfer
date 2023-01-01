@@ -48,11 +48,11 @@ python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-p
 
 - Result
 
-<img src ="Result\RealTime_the-muse_S256_E10000_chicken.png" height="128px" />
-<img src ="Result\RealTime_the-muse_S256_E10000_image_1.png" height="128px" /> <img src ="Result\RealTime_wave_S256_E10000_chicken.png" height="128px" /> <img src ="Result\RealTime_wave_S256_E10000_image_1.png" height="128px" /> 
+<img src ="Result\RealTime_the-muse_S256_E10000_image_0.png" height="128px" />
+<img src ="Result\RealTime_the-muse_S256_E10000_image_1.png" height="128px" /> <img src ="Result\RealTime_wave_S256_E10000_image_0.png" height="128px" /> <img src ="Result\RealTime_wave_S256_E10000_image_1.png" height="128px" /> 
 
-<img src ="Result\RealTime_night_S256_E10000_chicken.png" height="128px" />
-<img src ="Result\RealTime_night_S256_E10000_image_1.png" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_chicken.png" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_image_1.png" height="128px" /> 
+<img src ="Result\RealTime_night_S256_E10000_image_0.png" height="128px" />
+<img src ="Result\RealTime_night_S256_E10000_image_1.png" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_image_0.png" height="128px" /> <img src ="Result\RealTime_Arles_S256_E10000_image_1.png" height="128px" /> 
 
 ---
 
