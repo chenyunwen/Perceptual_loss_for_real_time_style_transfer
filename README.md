@@ -1,4 +1,72 @@
-Perceptual Losses for Real-Time Style Transfer
+# Perceptual Losses for Real-Time Style Transfer
+
+Reference repository: https://github.com/tyui592/Perceptual_loss_for_real_time_style_transfer.git
+
+## What we did?
+1. Modified to do video style transfer.
+2. Calculate execution time.
+
+## How to use?
+
+Environment we used:
+- [Python 3.10.8]
+- [PyTorch 1.13.1]
+
+### Run this code:
+
+- Training
+
+We use [MSCOCO train2014](http://cocodataset.org/#download) as training data and put the training images in `./coco2014`.
+
+Example for training with style image `imgs/style/Arles.jpg`:
+```
+python main.py --train-flag True --cuda-device-no 0 --imsize 256 --cropsize 240 --train-content ./coco2014/ --train-style imgs/style/Arles.jpg --save-path trained_models/Arles/
+```
+
+- Testing
+    - Image style transfer
+```
+python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path ../path/to/modle.pth --test-content ../path/to/content_img.jpg --output ../path/to/output_img.jpg
+```
+
+For example:
+```
+python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path trained_models/Arles/transform_network.pth --test-content imgs/image_0.jpg --output RealTime_Arles_S256_E10000_image_0.jpg
+```
+
+    - Video style transfer
+```
+python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path ../path/to/content_img.jpg --input-video ../path/to/input_video.mp4 --output-video ../path/to/output_video.mp4
+```
+
+For example:
+```
+python main.py --train-flag False --cuda-device-no 0 --imsize 256 --model-load-path trained_models/the-muse/transform_network.pth --input-video imgs/video_0.mp4 --output-video trained_models/the-muse/video_0.mp4
+```
+
+### Output files:
+- for image, in `src/settings.py`, and change `OUTPUT_PATH = '../path/to/result'`
+
+- for video, in `src/settings.py`, and change `OUTPUT_PATH_VIDEO = '../path/to/result'`
+
+## Our result
+We only show the image transfer result.
+
+- input content image
+
+<img src ="input\image_1.jpg" height="128px"/>
+
+- input style
+
+<img src ="input\Arles.jpg" height="128px" />
+
+- Result
+
+<img src ="output\Gatys_starry-night_S256_E500_image_1.png" width="170px" height="128px" />
+
+---
+
+## The following content comes from the original Repository.
 ---
 **Unofficial PyTorch implementation of real-time style transfer**
 
